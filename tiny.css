@@ -1,0 +1,134 @@
+/*
+
+1024
+1280×720
+1366×768
+1440×900
+1536×864
+1600×900
+1920×1080
+
+
+@media (min-width: 1600px) {
+header a {
+    font-size: 60px!important;
+}
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: 'Quantify'; src:url('https://dl.dropbox.com/s/i6586b8bouzb91p/Quantify.ttf');}
+
+@font-face {
+    font-family: 'Helvetica'; src:url('https://dl.dropbox.com/s/8ry0yqtk1oyr2nv/Helvetica.ttf');}
+
+/******************************
+            R O O T
+*******************************/
+a { /*Links*/
+    text-decoration:none;
+    color:inherit;
+  }
+  
+  a:hover { /*Links en hover*/
+      color: var(--accent)!important;
+  }
+
+  :root { /*Variables generales*/
+	/* Imagenes */
+	--background: fixed url('https://images2.imgbox.com/3b/d2/ZXw1OfHA_o.png') no-repeat;
+  --bg: fixed url('https://images2.imgbox.com/3b/d2/ZXw1OfHA_o.png') no-repeat;
+  
+	/* Fonts */
+  --title:'Quantify';
+  --body:'Helvetica';
+  --serif:'Playfair Display';
+  
+  /* Colors */
+  --light: rgb(187, 187, 187);
+}
+
+body { /*Body del foro*/
+    padding:0;
+    margin:0;
+    color: var(--light);
+  font-size:1.1vw;
+  font-family:var(--body);
+}
+
+/******************************
+            HEADER
+*******************************/
+header { /*Header del foro*/
+    /*Fondo*/
+      background:var(--background);
+      background-position-y: 25%;
+      background-size: cover;
+    
+    /*Position y tamaño*/
+      height:calc(100vh - 20vh);
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      
+    /*Centrar cosas*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    isolation:isolate;
+    gap:20px;
+    inset:0;
+  }
+  
+  header strong { /*Capitulo*/
+      font-family: 'Playfair Display';
+      text-transform: uppercase;
+      font-size: .7vw;
+  }
+  
+  header a { /*Titulo y link a inicio*/
+    /*Fuente*/
+      font-family: 'Quantify';
+      text-transform: uppercase;
+      font-size:5.5vw;
+    text-align:justify;
+      text-align-last: justify;
+      text-shadow:1px 5px 0px rgb(7, 74, 99);
+  }
+  
+  /* @media (min-width: 1600px) {
+    header a {
+        font-size: 10px!important;
+    }
+} */
+
+header span {
+      font-family:'Helvetica';
+      text-transform: uppercase;
+      font-size:.7vw;
+      width:40%;
+      text-align-last: justify;
+  }
+  
+  /*NAVBAR*/
+  nav {
+      position: sticky;
+      top:0;
+      background:rgb(24, 26, 27);
+      width:100%;
+      height:60px;
+      margin-top:calc(100vh - 20vh);;
+  }
+  
+  /*WRAPPER*/ 
+  main {
+      position: relative;
+      margin-top:-22px;
+      background:rgb(24, 26, 27);
+      min-height:100vh;
+  
+  }
