@@ -16,6 +16,7 @@ header a {
 
 */
 
+@import url("https://kit-pro.fontawesome.com/releases/v5.13.0/css/pro.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
@@ -27,6 +28,7 @@ header a {
 /******************************
             R O O T
 *******************************/
+
 a { /*Links*/
     text-decoration:none;
     color:inherit;
@@ -37,20 +39,38 @@ a { /*Links*/
   }
 
   :root { /*Variables generales*/
-	/* Imagenes */
-	--background: fixed url('https://images2.imgbox.com/3b/d2/ZXw1OfHA_o.png') no-repeat;
-  --bg: fixed url('https://images2.imgbox.com/3b/d2/ZXw1OfHA_o.png') no-repeat;
+	/* Imágenes */
+	--bg: fixed url('https://images2.imgbox.com/3b/d2/ZXw1OfHA_o.png') no-repeat; /*Fondo del header*/
+  --hex:  url('TinyPattern.png') repeat; /*Hexagonos*/
   
 	/* Fonts */
   --title:'Quantify';
   --body:'Helvetica';
   --serif:'Playfair Display';
   
-  /* Colors */
-  --light: rgb(187, 187, 187);
+  /* Colores */
+  --light: #bbbbbb;
+  --dark: #181a1b;
+  --dark2: #242424;
+  --dark3:#121212;
+  --dark4: #090909;
+  --dark5: #1c1c1c;
+  --accent: #074a63;
+}
+
+body::-webkit-scrollbar { /*Scroll principal*/
+	width: 1vw;
+	height: 1vw;
+	background: var(--dark);
+	outline:.15vw solid var(--dark2);
+}
+body::-webkit-scrollbar-thumb {
+	background-color: var(--accent);
+	border: solid .5vw var(--dark);
 }
 
 body { /*Body del foro*/
+  background-color: var(--dark);
     padding:0;
     margin:0;
     color: var(--light);
@@ -63,7 +83,7 @@ body { /*Body del foro*/
 *******************************/
 header { /*Header del foro*/
     /*Fondo*/
-      background:var(--background);
+      background:var(--bg);
       background-position-y: 25%;
       background-size: cover;
     
@@ -73,15 +93,18 @@ header { /*Header del foro*/
       top:0;
       left:0;
       width:100%;
-      
+      z-index:-556;  
     /*Centrar cosas*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     isolation:isolate;
-    gap:20px;
+    gap:2vw;
     inset:0;
+
+    border-bottom:.1vw solid var(--dark2);
+
   }
   
   header strong { /*Capitulo*/
@@ -91,22 +114,19 @@ header { /*Header del foro*/
   }
   
   header a { /*Titulo y link a inicio*/
-    /*Fuente*/
       font-family: 'Quantify';
       text-transform: uppercase;
       font-size:5.5vw;
     text-align:justify;
       text-align-last: justify;
-      text-shadow:1px 5px 0px rgb(7, 74, 99);
+      text-shadow:.1vw .5vw 0px var(--accent);
   }
   
-  /* @media (min-width: 1600px) {
-    header a {
-        font-size: 10px!important;
-    }
-} */
+  header a:hover { /*Hover de titulo: se mantiene del mismo  color*/
+    color:var(--light)!important;
+  }
 
-header span {
+header span { /*Subtitulo*/
       font-family:'Helvetica';
       text-transform: uppercase;
       font-size:.7vw;
@@ -114,21 +134,158 @@ header span {
       text-align-last: justify;
   }
   
-  /*NAVBAR*/
-  nav {
+/******************************
+            NAVBAR
+*******************************/
+  nav { /*Navbar*/
+    /*Fondo y borde*/
+    background:var(--dark);
+    border-bottom:.1vw solid var(--dark2);
+
+    /*Tamaño*/
+    width:100%;
+    height:13vh;
+    
+    /*Posición*/
       position: sticky;
       top:0;
-      background:rgb(24, 26, 27);
-      width:100%;
-      height:60px;
-      margin-top:calc(100vh - 20vh);;
+      margin-top:calc(100vh - 20vh);
+      z-index:99;
   }
   
-  /*WRAPPER*/ 
-  main {
-      position: relative;
-      margin-top:-22px;
-      background:rgb(24, 26, 27);
+  .nav-main { /*Navbar principal*/
+    /*Tamaño*/
+    width:100%;
+    height:10vh;
+    border-bottom:.1vw solid var(--dark2);
+
+    /*Padding*/
+    box-sizing: border-box;
+    padding:0  2vw;
+
+    /*Flex*/
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-main .navs { /* Links */
+    text-transform: uppercase;
+    font-size:.8vw;
+  }
+
+  .nav-main .this-user { /* User */
+    display:flex;
+    gap:1vw;
+    align-items: center;
+  }
+
+  .this-user .name-links { /*Nombre y links*/ 
+  display:flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.name-links strong { /*Nombre*/ 
+ font-family:var(--title);
+ text-transform: uppercase;
+ font-size:1.4vw;
+ text-align:right;
+}
+
+.name-links ul { /*Links*/
+list-style-type: none;
+display: flex;
+gap:.2vw;
+margin:0;
+text-transform: uppercase;
+font-size:.65vw;}
+
+  .this-user .avs { /*Avatar*/
+    width:3.8vw;
+    height:3.8vw;
+    border-radius:100%;
+  }
+
+  .this-user .avs img{ /*Avatar imagen*/
+    width:3.8vw;
+    height:3.8vw;
+    border-radius:100%;
+  }
+
+  .this-user button.alerts { /*Boton de notificaciones*/ 
+  color:var(--light);
+background:transparent;
+border:none;
+margin:none;
+padding:none;
+font-size:.9vw;
+width:auto;
+height:auto;}
+
+  .nav-tree { /*Linktree*/
+     /*Tamaño*/
+     width:100%;
+     height:3vh;
+     box-sizing: border-box;
+     display: flex;
+    align-items: center;
+  }
+
+  .nav-tree ul { /*Listado*/
+    list-style-type: none;
+    display: flex;
+    gap:1vw;
+    margin:0;
+  }
+
+  .nav-tree ul li { /*Botones*/
+    text-transform: uppercase;
+    font-size:.5vw;
+    padding:.2vw .3vw;
+  }
+
+  .nav-tree ul li:first-child  { /*Titulo*/
+  background:var(--accent);
+}
+
+.nav-tree ul li:first-child a  { /*Titulo hover*/
+  color:var(--light)!important;
+}
+
+
+/******************************
+           WRAPPER
+*******************************/
+  main { /* Container principal */
+    /*Fondo*/
+    background:var(--dark);
+      /*Posición*/
+      z-index:98;
+      margin:0 auto;
       min-height:100vh;
-  
+      position: relative;
+      margin-top:-3vh;
+
+      /* Padding */
+      box-sizing: border-box;
+      padding:30px;
+  }
+
+  main:before { /*Hexágonos!*/
+    content: "";
+
+    /*Posición y tamaño*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:-56;
+
+    /*Hexágonos! x2*/
+    background: var(--hex);
+    background-size:20%;
+    filter: invert(100%);
+    opacity:.012;
   }

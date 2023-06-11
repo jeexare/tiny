@@ -1,0 +1,30 @@
+/*
+
+1024
+1280×720
+1366×768
+1440×900
+1536×864
+1600×900
+1920×1080
+
+
+@media (min-width: 1600px) {
+header a {
+    font-size: 60px!important;
+}
+
+*/
+
+@import url("tiny.css");
+
+/******************************
+       TABLÓN DE ANUNCIOS
+*******************************/
+.main-board {
+    background: var(--dark3);
+    width: 80vw;
+    height: 34vh;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
