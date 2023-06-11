@@ -22,8 +22,8 @@ header a {
 @font-face {
     font-family: 'Quantify'; src:url('https://dl.dropbox.com/s/i6586b8bouzb91p/Quantify.ttf');}
 
-@font-face {
-    font-family: 'Helvetica'; src:url('https://dl.dropbox.com/s/8ry0yqtk1oyr2nv/Helvetica.ttf');}
+/* @font-face {
+    font-family: 'Helvetica'; src:url('https://dl.dropbox.com/s/8ry0yqtk1oyr2nv/Helvetica.ttf');} */
 
 /******************************
             R O O T
@@ -41,7 +41,9 @@ a { /*Links*/
   :root { /*Variables generales*/
 	/* Imágenes */
 	--bg: fixed url('https://images2.imgbox.com/3b/d2/ZXw1OfHA_o.png') no-repeat; /*Fondo del header*/
+  --cathead:  url('cathead.png'); /*Fondo de header de categorías*/
   --hex:  url('TinyPattern.png') repeat; /*Hexagonos*/
+  --pattern:  url('TinyPattern.jpeg') repeat; /*Patrón rarito*/
   
 	/* Fonts */
   --title:'Quantify';
@@ -69,12 +71,22 @@ body::-webkit-scrollbar-thumb {
 	border: solid .5vw var(--dark);
 }
 
+:not(body)::-webkit-scrollbar { /*Scroll de todo menos del body*/
+	width: 10px;
+	height: 10px;
+	background: transparent;
+}
+:not(body)::-webkit-scrollbar-thumb {
+	background: var(--dark);
+	outline:.15vw solid var(--dark2);
+}
+
 body { /*Body del foro*/
   background-color: var(--dark);
     padding:0;
     margin:0;
     color: var(--light);
-  font-size:1.1vw;
+  font-size:calc(10px + .4vw);
   font-family:var(--body);
 }
 
@@ -100,7 +112,7 @@ header { /*Header del foro*/
     justify-content: center;
     align-items: center;
     isolation:isolate;
-    gap:2vw;
+    gap:5vw;
     inset:0;
 
     border-bottom:.1vw solid var(--dark2);
@@ -110,28 +122,42 @@ header { /*Header del foro*/
   header strong { /*Capitulo*/
       font-family: 'Playfair Display';
       text-transform: uppercase;
-      font-size: .7vw;
+      font-size: .6vw;
+      letter-spacing: .1vw;
+      font-weight: normal;
   }
   
   header a { /*Titulo y link a inicio*/
       font-family: 'Quantify';
       text-transform: uppercase;
-      font-size:5.5vw;
-    text-align:justify;
+      font-size: 5.5vw;
+      text-align: justify;
       text-align-last: justify;
-      text-shadow:.1vw .5vw 0px var(--accent);
+      text-shadow: 0.1vw 0.5vw 0px var(--accent);
+      line-height: 2vw;
+      display: flex;
+      flex-direction: column;
   }
   
   header a:hover { /*Hover de titulo: se mantiene del mismo  color*/
     color:var(--light)!important;
   }
 
-header span { /*Subtitulo*/
+header a span {
+  font-size: 1.4vw;
+    text-shadow: none;
+    letter-spacing: 2vw;
+    font-family: 'Helvetica';
+    margin-top: 2vw;
+    display: block;
+}
+header:not(a) > span { /*Subtitulo*/
       font-family:'Helvetica';
       text-transform: uppercase;
-      font-size:.7vw;
-      width:40%;
+      font-size:.5vw;
+      width:30%;
       text-align-last: justify;
+      letter-spacing: .2vw;
   }
   
 /******************************
@@ -144,7 +170,7 @@ header span { /*Subtitulo*/
 
     /*Tamaño*/
     width:100%;
-    height:13vh;
+    height:111px;
     
     /*Posición*/
       position: sticky;
@@ -156,7 +182,7 @@ header span { /*Subtitulo*/
   .nav-main { /*Navbar principal*/
     /*Tamaño*/
     width:100%;
-    height:10vh;
+    height:96px;
     border-bottom:.1vw solid var(--dark2);
 
     /*Padding*/
@@ -171,7 +197,7 @@ header span { /*Subtitulo*/
 
   .nav-main .navs { /* Links */
     text-transform: uppercase;
-    font-size:.8vw;
+    font-size:11px;
   }
 
   .nav-main .this-user { /* User */
@@ -189,17 +215,17 @@ justify-content: center;
 .name-links strong { /*Nombre*/ 
  font-family:var(--title);
  text-transform: uppercase;
- font-size:1.4vw;
+ font-size:20px;
  text-align:right;
 }
 
 .name-links ul { /*Links*/
 list-style-type: none;
 display: flex;
-gap:.2vw;
+gap:.5vw;
 margin:0;
 text-transform: uppercase;
-font-size:.65vw;}
+font-size:9px;}
 
   .this-user .avs { /*Avatar*/
     width:3.8vw;
@@ -219,14 +245,14 @@ background:transparent;
 border:none;
 margin:none;
 padding:none;
-font-size:.9vw;
+font-size:11px;
 width:auto;
 height:auto;}
 
   .nav-tree { /*Linktree*/
      /*Tamaño*/
      width:100%;
-     height:3vh;
+     height:15px;
      box-sizing: border-box;
      display: flex;
     align-items: center;

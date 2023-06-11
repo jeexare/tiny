@@ -1,0 +1,114 @@
+/*
+
+1024
+1280×720
+1366×768
+1440×900
+1536×864
+1600×900
+1920×1080
+
+
+@media (min-width: 1600px) {
+header a {
+    font-size: 60px!important;
+}
+
+*/
+
+@import url("tiny.css");
+
+/******************************
+     AFILIADOS Y CREDITOS
+*******************************/
+.afi-creds { /*Caja principal*/
+    background: var(--dark3);
+    width: 1028px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border:1px solid var(--dark2);
+    padding:20px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.afi-afi {
+    background: red;
+    height: 100%;
+    width: 576px;
+}
+
+.afi-count {
+    background:blue;
+    width:25px;
+    height: 100%;
+}
+
+.afi-cred {
+    background:green;
+    width:365px;
+    height: 100%;
+}
+/* #statistics .affiliates .affiliates-affiliates {
+	height: 100%;
+	width: 75%;
+	display: grid;
+	grid-template-columns: repeat(13, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	justify-items: center;
+	align-items: center;
+}
+
+#statistics .affiliates .affiliates-affiliates a {
+	max-width: 50px;
+	width: 100%;
+	height: auto;
+	max-height: 50px;
+	text-decoration: none;
+	position: relative;
+}
+
+#statistics .affiliates .affiliates-affiliates a:before {
+	content: attr(data-title);
+	width: max-content;
+	font-family: var(--condensed);
+
+	font-size: 0px;
+	text-transform: uppercase;
+
+	position: absolute;
+	top: 0px;
+	border-radius: 5px;
+	left: 30px;
+	color: var(--accent);
+	font-weight: 900;
+	z-index: 3;
+	transition: 0.2s ease-in-out;
+}
+
+#statistics .affiliates .affiliates-affiliates a:hover:before {
+	font-size: 10px;
+	transition: 0.2s ease-in-out;
+	backdrop-filter: blur(7px);
+	background: rgb(0, 0, 0, 0.7);
+	border: 0.2px solid var(--accent);
+	padding: 4px 8px;
+}
+
+#statistics .affiliates .affiliates-affiliates a img {
+	width: 100%;
+	max-width: 50px;
+	height: auto;
+	object-fit: cover;
+	object-position: center;
+	transition: ease-in-out 0.3s;
+}
+
+#statistics .affiliates .affiliates-affiliates a:hover img {
+	height: 50px;
+} */
