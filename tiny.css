@@ -97,6 +97,34 @@ body { /*Body del foro*/
   font-family:var(--body);
 }
 
+[data-alt] {
+  position: relative;
+}
+[data-alt]:after{
+	content:attr(data-alt);
+	width:max-content;
+	position:absolute;
+	border:1px solid var(--dark2);
+	border-radius:5px;
+	background:var(--dark3);
+	color:var(--light);
+	z-index:1;
+	font-family:var(--body);
+	font-size:0px;
+  text-transform: uppercase;
+  bottom: -1.6em;
+    left: 100%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    z-index: 99999;
+    transition: all 0.1s ease 0.5s;
+}
+
+[data-alt]:hover:after{
+	padding:2px 9px;
+	font-size:9px;
+}
+
 /******************************
             HEADER
 *******************************/
