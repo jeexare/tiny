@@ -58,6 +58,7 @@ a { /*Links*/
   --dark4: #090909;
   --dark5: #1c1c1c;
   --accent: #074a63;
+  --accent2: rgb(7, 75, 100, 0.3);
 
   --staff: #83afb4;
   --vortex: #621616;
@@ -97,7 +98,7 @@ body { /*Body del foro*/
   font-family:var(--body);
 }
 
-[data-alt] {
+[data-alt] { /*Cuando en hover de algo que tenga un [data-alt] (botón, link...) esto aparece*/
   position: relative;
 }
 [data-alt]:after{
