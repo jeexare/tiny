@@ -1,0 +1,139 @@
+/*
+
+1024
+1280×720
+1366×768
+1440×900
+1536×864
+1600×900
+1920×1080
+
+
+@media (min-width: 1600px) {
+header a {
+    font-size: 60px!important;
+}
+
+*/
+
+@import url("tiny.css");
+
+/******************************
+         ESTADISTICAS
+*******************************/
+.stadisticas { /*Caja principal*/
+    background: var(--dark3);
+    width: 1028px;
+    height: 225px;
+    margin: 0 auto;
+    margin-top: 10vh;
+    box-sizing: border-box;
+    border:1px solid var(--dark2);
+    padding:20px;
+    display:flex;
+    gap:20px;
+}
+
+.s-online {
+    width:320px;
+    background:var(--dark4);
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pad-online {
+    height:100%;
+    box-sizing: border-box;
+    padding:10px;
+    overflow-y:scroll;
+    text-align: justify;
+}
+
+.pad-online a {
+    font-size:15px;
+    text-transform: lowercase;
+    font-family: var(--title);
+}
+
+.data-online {
+   height:25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.s-grupos {
+    width:200px;
+    display:flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+.ggrupo {
+    background: var(--dark4);
+    flex: 0 0 calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    max-width: 30%;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.ggrupo strong {
+    font-size: 20px;
+}
+
+.s-horas {
+    width:290px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.s-horas2 {
+    background:var(--dark4);
+    height:119px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.pad-horas {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: justify;
+    text-align-last:justify;
+}
+
+.pad-horas a {
+    font-size:11px;
+    text-transform: uppercase;
+}
+.s-nuevoo {
+    background:var(--dark4);
+    height:54px;
+}
+
+.s-stats {
+    width:55px;
+    background:lightgreen;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.s-stat {
+    background:var(--dark4);
+    height:55px;
+}
+
+.s-links {
+    width:32px;
+    background:var(--dark4);
+}

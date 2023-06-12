@@ -58,6 +58,13 @@ a { /*Links*/
   --dark4: #090909;
   --dark5: #1c1c1c;
   --accent: #074a63;
+
+  --staff: #83afb4;
+  --vortex: #621616;
+  --watchmen: #336140;
+  --pacers: #854777;
+  --menders: #9a8d5e;
+  --inactivos: #a6a6a6;
 }
 
 body::-webkit-scrollbar { /*Scroll principal*/
