@@ -23,7 +23,7 @@ header a {
 *******************************/
 .afi-creds { /*Caja principal*/
     background: var(--dark3);
-    width: 1028px;
+    width: 1000px;
     height: 120px;
     margin: 0 auto;
     margin-top: 30px;

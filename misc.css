@@ -1,0 +1,101 @@
+/*
+
+1024
+1280×720
+1366×768
+1440×900
+1536×864
+1600×900
+1920×1080
+
+
+@media (min-width: 1600px) {
+header a {
+    font-size: 60px!important;
+}
+
+*/
+
+@import url("tiny.css");
+
+/******************************
+        LISTA DE TEMAS
+*******************************/
+.listadetemas {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.forumbg {}
+.forum-header {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 12px;
+}
+.topiclist.topics {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+.thread {
+    background: var(--dark3);
+    height: 75px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+.to-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light2);
+}
+.to-left {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+.to-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.to-desc {
+    font-size: 11px;
+}
+.to-by {
+    text-transform: uppercase;
+    font-size: 9px;
+}
+.to-right {
+    display: flex;
+    height: 100%;
+    gap: 10px;
+    width: 44%;
+    justify-content: end;
+    align-items: center;
+}
+.to-info {
+    font-size: 10px;
+    text-align: right;
+    text-transform: uppercase;
+}
+.to-last {
+    font-size: 9px;
+    font-style: italic;
+}
+.to-stats {}
+.to-link {
+color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

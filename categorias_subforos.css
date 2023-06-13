@@ -23,7 +23,7 @@ header a {
 *******************************/
 .forabg { /*Toda una categoría*/
     background: var(--dark3);
-    width: 1028px;
+    width: 100%;
     height: auto;
     margin:0 auto;
     margin-top:100px;
@@ -153,7 +153,7 @@ ul.topiclist.forums { /*Listado de subforos*/
 
 .charac ul.topiclist.forums { /*Para la  categoria de personaje*/
     display: grid;
-    grid-template-columns: [plot] 350px [subs] 66%;
+    grid-template-columns: [plot] 33% [subs] 66%;
     grid-template-rows: [sub1] 140px [sub2] 140px [sub3] 140px;
 }
 

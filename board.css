@@ -23,7 +23,7 @@ header a {
 *******************************/
 .th-1 { /*Caja principal*/
     background: var(--dark3);
-    width: 1028px;
+    width: 1000px;
     height: 320px;
     margin: 0 auto;
     margin-top: 10vh;
