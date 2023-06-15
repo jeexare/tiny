@@ -129,36 +129,74 @@ function removeClass(element, name) {
            GUIDEBOOK
 *******************************/
 document.addEventListener("click", (e) => {
-      const tabButton = e.target.closest(".data-tab"); // Fetches the closest ancestor element with the class "scene-button" to the mouseover target
-      if (!tabButton) return; // If sceneButton does not exist, return
-  
-      const tabName = tabButton.getAttribute("data-tab"); // Fetches the data-name attribute value of the sceneButton
-  
-      if (!tabName) return; // If sceneName does not exist, return
-  
-      const tab = document.querySelector(`.gb-tab[data-tab="${tabName}"]`); // Fetches the scene element with the corresponding data-name attribute value
-  
-      if (!tab) return; // If scene does not exist, return
-  
-      const activeTab = document.querySelector(
-        `.data-tab[data-tab="${tabName}"]`
-      ); // Fetches the active scene button element with the corresponding data-name attribute value
-  
-      if (!activeTab) return; // If activeScene does not exist, return
-  
-      document
-        .querySelectorAll(".gb-tab")
-        .forEach((tab) => tab.classList.remove("active")); // Removes the "active" class from all scene elements
-  
-      tab.classList.add("active"); // Adds the "active" class to the scene element
-  
-      document
-        .querySelectorAll(".data-tab")
-        .forEach((activeTab) => activeTab.classList.remove("active")); // Removes the "active" class from all scene buttons
-  
-      activeTab.classList.add("active"); // Adds the "active" class to the activeScene button
+  const tabButton = e.target.closest(".data-tab"); // Fetches the closest ancestor element with the class "scene-button" to the mouseover target
+  if (!tabButton) return; // If sceneButton does not exist, return
+
+  const tabName = tabButton.getAttribute("data-tab"); // Fetches the data-name attribute value of the sceneButton
+
+  if (!tabName) return; // If sceneName does not exist, return
+
+  const tab = document.querySelector(`.gb-tab[data-tab="${tabName}"]`); // Fetches the scene element with the corresponding data-name attribute value
+
+  if (!tab) return; // If scene does not exist, return
+
+  const activeTab = document.querySelector(`.data-tab[data-tab="${tabName}"]`); // Fetches the active scene button element with the corresponding data-name attribute value
+
+  if (!activeTab) return; // If activeScene does not exist, return
+
+  document
+    .querySelectorAll(".gb-tab")
+    .forEach((tab) => tab.classList.remove("active")); // Removes the "active" class from all scene elements
+
+  tab.classList.add("active"); // Adds the "active" class to the scene element
+
+  document
+    .querySelectorAll(".data-tab")
+    .forEach((activeTab) => activeTab.classList.remove("active")); // Removes the "active" class from all scene buttons
+
+  activeTab.classList.add("active"); // Adds the "active" class to the activeScene button
+
+  var titleElement = document.querySelector('.gb-titt');
+  titleElement.textContent = tabName;
 });
-  
+
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("ontab").click();
+  document.getElementById("ontab").click();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modeSwitch = document.getElementById("gb-hide");
+  const myGuidebook = document.querySelector(".guide-book");
+
+  modeSwitch.addEventListener("click", (e) => {
+    if (myGuidebook.classList.contains("hidden")) {
+      myGuidebook.classList.remove("hidden");
+    } else {
+      myGuidebook.classList.add("hidden");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonLeft = document.getElementById("gb-left");
+  const buttonRight = document.getElementById("gb-right");
+
+  // Add click event listener to gb-left
+  buttonLeft.addEventListener('click', function() {
+    let activeTab = document.querySelector('.data-tab.active');
+  let prevTab = activeTab.previousElementSibling;
+  if (prevTab && prevTab.classList.contains('data-tab')) {
+    prevTab.click();
+  }
+});
+
+// Add click event listener to gb-right
+buttonRight.addEventListener('click', function() {
+  let activeTab = document.querySelector('.data-tab.active');
+  let nextTab = activeTab.nextElementSibling;
+  if (nextTab && nextTab.classList.contains('data-tab')) {
+    nextTab.click();
+  }
+});
+
 });
