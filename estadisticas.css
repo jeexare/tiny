@@ -118,6 +118,7 @@ header a {
     box-sizing: border-box;
     text-align: justify;
     text-align-last:justify;
+    line-height: 0.8;
 }
 
 .pad-horas a {
