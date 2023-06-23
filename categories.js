@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
        ZONA DE PERSONAJES
 *******************************/
   /*Fetches the category*/
-  const forabgCharac = document.querySelector(".forabg.charac");
+  const forabgCharac = document.querySelector("#c2.forabg");
   /*If the category exists*/
   if (forabgCharac) {
     /*Fetches the first subforum*/
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /******************************
        ZONA DE ROL
 *******************************/
-  const scenesCat = document.querySelector(".scene");
+  const scenesCat = document.querySelector("#c4");
   /* Fetches the category element */
 
   if (scenesCat) {

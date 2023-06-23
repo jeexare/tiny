@@ -128,41 +128,57 @@ function removeClass(element, name) {
 /******************************
            GUIDEBOOK
 *******************************/
+document.addEventListener("DOMContentLoaded", () => {
+  // Get the URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabButtonId = urlParams.get("tabButtonId");
+
+  // If the URL parameter exists
+  if (tabButtonId) {
+    // Find the corresponding tab button element based on the href value
+    const tabButton = document.querySelector(`.data-tab[href="${tabButtonId}"]`);
+
+    // If the tab button element exists, trigger a click event on it
+    if (tabButton) {
+      tabButton.click();
+    }
+  }
+});
+
 document.addEventListener("click", (e) => {
-  const tabButton = e.target.closest(".data-tab"); // Fetches the closest ancestor element with the class "scene-button" to the mouseover target
-  if (!tabButton) return; // If sceneButton does not exist, return
+  const tabButton = e.target.closest(".data-tab");
+  if (!tabButton) return;
 
-  const tabName = tabButton.getAttribute("data-tab"); // Fetches the data-name attribute value of the sceneButton
+  const tabName = tabButton.getAttribute("data-tab");
+  const tab = document.querySelector(`.gb-tab[data-tab="${tabName}"]`);
+  const activeTab = document.querySelector(`.data-tab[data-tab="${tabName}"]`);
 
-  if (!tabName) return; // If sceneName does not exist, return
-
-  const tab = document.querySelector(`.gb-tab[data-tab="${tabName}"]`); // Fetches the scene element with the corresponding data-name attribute value
-
-  if (!tab) return; // If scene does not exist, return
-
-  const activeTab = document.querySelector(`.data-tab[data-tab="${tabName}"]`); // Fetches the active scene button element with the corresponding data-name attribute value
-
-  if (!activeTab) return; // If activeScene does not exist, return
+  if (!tab || !activeTab) return;
 
   document
     .querySelectorAll(".gb-tab")
-    .forEach((tab) => tab.classList.remove("active")); // Removes the "active" class from all scene elements
-
-  tab.classList.add("active"); // Adds the "active" class to the scene element
+    .forEach((tab) => tab.classList.remove("active"));
+  tab.classList.add("active");
 
   document
     .querySelectorAll(".data-tab")
-    .forEach((activeTab) => activeTab.classList.remove("active")); // Removes the "active" class from all scene buttons
-
-  activeTab.classList.add("active"); // Adds the "active" class to the activeScene button
+    .forEach((activeTab) => activeTab.classList.remove("active"));
+  activeTab.classList.add("active");
 
   var titleElement = document.querySelector('.gb-titt');
   titleElement.textContent = tabName;
+
+  // Get the href value of the tab button
+  const hrefValue = tabButton.getAttribute("href");
+
+  // Update the URL with the tabButtonId parameter
+  history.replaceState(null, null, `?tabButtonId=${hrefValue}`);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("ontab").click();
-});
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.getElementById("ontab").click();
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const modeSwitch = document.getElementById("gb-hide");
