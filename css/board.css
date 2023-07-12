@@ -270,3 +270,41 @@ box-sizing: border-box;
     font-size: 14px;
     display: block;
 }
+
+@media (max-width:666px) {
+    .th-1 {
+        height: auto!important;
+    gap: 0;
+}
+    .main-board {
+        flex-wrap: wrap!important;
+    }
+
+    .main-left {
+        align-self: stretch!important;
+        flex: 100%!important;
+    }
+
+    .th-links {
+        flex: 100%!important;
+    }
+
+    .th-rt  {
+        flex: 100%!important;
+        height: 184px!important;
+    }
+
+    .th-eventos {
+        margin-top: 435px!important;
+    }
+
+    .th-event {
+        display: none!important;
+    }
+
+    .event-flex {
+        border-left: 0!important;
+        padding-left: 0!important;
+        text-align: center!important;
+    }
+}

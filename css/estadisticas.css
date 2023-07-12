@@ -189,3 +189,49 @@ header a {
 .s-links a:nth-child(odd) {
     color:var(--accent);
 }
+
+@media (max-width:666px) {
+    .stadisticas {
+        height: auto!important;
+        flex-wrap: wrap!important;
+        flex-direction: column!important;
+    }
+
+    .s-online {
+        width: 100%!important;
+        height: 200px!important;
+    }
+
+    .s-grupos {
+        width: 100%!important;
+        order: 1!important;
+        justify-content: space-between!important;
+    }
+
+    .ggrupo {
+        max-width: none!important;
+    gap: 2px!important;
+    }
+
+    .s-horas {
+        width: 100%!important;
+    }
+
+    .s-stats {
+        width: 100%!important;
+        flex-direction: row!important;
+        height: 55px!important;
+        order: 2!important;
+    }
+    
+    .s-stat {
+        width: 100%!important;
+    }
+
+    .s-links {
+        order: -1!important;
+    width: 100%!important;
+    flex-direction: row!important;
+    padding: 10px 0px!important;
+    }
+}

@@ -1,0 +1,110 @@
+/******************************
+           GUIDEBOOK
+*******************************/
+
+.guide-book {
+    width: 100%;
+    height: auto;
+    background: var(--dark3);
+    margin-top: 40px;
+    box-sizing: border-box;
+    display: flex;
+    transition: .5s ease-in-out;
+  }
+  
+  .gb-links {
+    width: 20%;
+    border: 1px solid var(--dark2);
+    box-sizing: border-box;
+    padding: 20px;
+    transition: .5s ease-in-out;
+    border-right: 1px solid var(--dark2);
+    margin: 20px 0px 20px 20px;
+  }
+  
+  .gb-sticky {
+    position: sticky;
+      top: 125px;
+  }
+  
+  .gb-tit {
+  text-transform: uppercase;
+  font-family: var(--title);
+  font-size: 20px;
+  text-shadow: 1px 3px 0px var(--accent);
+  }
+  
+  .guide-book span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      cursor: pointer;
+  }
+  
+  .guide-book span b {
+      font-family: var(--serif);
+      color: var(--accent);
+      font-weight: normal;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+  }
+  
+  .guide-book span:hover {
+      color:var(--accent);
+  }
+  
+  .guide-book span b:after {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 1px;
+      background: var(--accent);
+      transition: .4s ease-in-out;
+  }
+  
+  .guide-book span.active b:after {
+      content: "";
+      width: 40px;
+      transition: .4s ease-in-out;
+  }
+  .gb-tabs {
+    box-sizing: border-box;
+    padding: 10px;
+    transition: .5s ease-in-out;
+    border-left: 1px solid var(--dark2);
+    min-height: 420px;
+    flex: 1;
+    margin-left: -1px;
+  }
+  
+  .gb-tab {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: justify;
+    height: 100%;
+    display: none;
+  }
+  
+  .gb-tab.active {
+      display: block;
+  }
+  
+  .gb-titt {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  @media (max-width:666px) {
+    .guide-book {
+        flex-direction: column!important;
+    }
+
+    .gb-links {
+        width: calc(100% - 40px)!important;
+        margin: 20px!important;
+    }
+
+  }
