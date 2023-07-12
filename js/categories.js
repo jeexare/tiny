@@ -42,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
         /* Iterates over each subforum element */
         const foroTit = foroRegElement.querySelector(".foro-tit");
         const foroTitName = foroTit.textContent;
-        const foroTitHref = foroTit.getAttribute("href");
+        const foroTitAnchor = foroTit.querySelector("a");
+        const foroTitHref = foroTitAnchor.getAttribute("href");
         /* Fetches the title, name, and href attributes of the subforum */
 
         const newButton = document.createElement("a");
