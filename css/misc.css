@@ -305,4 +305,8 @@ span.pp-nivel b {
   .post-profile {
     display: none!important;
   }
+
+  .ph-right span {
+    display: none!important;
+  }
 }

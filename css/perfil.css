@@ -101,7 +101,7 @@
   }
   .ps-trnk {
     display: flex;
-    width: 39.2%;
+    width: calc(100% - 34% - 280px);
     flex-direction: column;
     gap: 20px;
   }
@@ -204,3 +204,40 @@
     text-transform: uppercase;
     font-size: 9px;
   }
+
+  @media (max-width:666px) {
+    .profile-simple {
+      height: auto!important;
+    }
+
+    .ps-header {
+      height: auto!important;
+    flex-direction: column-reverse!important;
+    }
+
+    .ps-main {
+      flex-wrap: wrap!important;
+      height: auto!important;
+      justify-content: center!important;
+    }
+
+    .ps-trnk {
+      width: 100%!important;
+      order: 2!important;
+      height: 500px!important;
+    }
+
+    .ps-stats {
+      height: 350px!important;
+      border-left: 0!important;
+      width: calc(100% - 270px)!important;
+      position: relative!important;
+    }
+}
+
+@media (max-width:415px) {
+  .ps-stats {
+    order:1!important;
+    width: 100%!important;
+  }
+}
