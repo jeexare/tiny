@@ -2,82 +2,105 @@
         LISTA DE TEMAS
 *******************************/
 .listadetemas {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 40px;
-  }
-  .forumbg {
-  }
-  .forum-header {
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 12px;
-  }
-  .topiclist.topics {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    box-sizing: border-box;
-    padding: 10px 0px;
-  }
-  .thread {
-    background: var(--dark3);
-    height: 75px;
-    box-sizing: border-box;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-  }
-  .to-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--light2);
-  }
-  .to-left {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 100%;
-  }
-  .to-title {
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 14px;
-  }
-  .to-desc {
-    font-size: 11px;
-  }
-  .to-by {
-    text-transform: uppercase;
-    font-size: 9px;
-    display: flex;
-    gap: 5px;
-  }
-  .to-right {
-    display: flex;
-    height: 100%;
-    gap: 10px;
-    width: 44%;
-    justify-content: end;
-    align-items: center;
-  }
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.forum-header {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+}
+.topiclist.topics {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 10px 0px;
+}
+.thread {
+  background: var(--dark3);
+  height: 75px;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.to-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light2);
+}
+.to-left {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  justify-content: center;
+}
+.to-title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.to-desc {
+  font-size: 11px;
+}
+.to-by {
+  text-transform: uppercase;
+  font-size: 9px;
+  display: flex;
+  gap: 5px;
+}
+.to-right {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  width: 44%;
+  justify-content: end;
+  align-items: center;
+}
+.to-info {
+  font-size: 10px;
+  text-align: right;
+  text-transform: uppercase;
+}
+.to-last {
+  font-size: 9px;
+  font-style: italic;
+}
+.to-link {
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 666px) {
   .to-info {
-    font-size: 10px;
-    text-align: right;
-    text-transform: uppercase;
+    display: none !important;
   }
-  .to-last {
-    font-size: 9px;
-    font-style: italic;
+
+  .topic-actions {
+    flex-wrap: wrap !important;
   }
-  .to-link {
-    color: var(--accent);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .pagination {
+    height: auto !important;
+    margin: 0 auto !important;
   }
+
+  .to-right {
+    width: fit-content !important;
+  }
+
+  .to-title {
+    font-size: 10px !important;
+  }
+}

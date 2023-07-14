@@ -70,10 +70,10 @@ header a {
 }
 .afi-cred {
     background:var(--dark4);
-    width:365px;
     height: 100%;
 	box-sizing: border-box;
 	padding:10px;
+    width: calc(100% - 576px - 25px);
 }
 
 .cred-pad {
