@@ -256,10 +256,20 @@ box-sizing: border-box;
     border-left: 1px solid var(--dark2);
     padding-left: 20px;
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    width: calc(100% - 108px);
     align-items: center;
     font-size: 10px;
+    gap: 20px;
+}
+
+.event-flex span {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    max-width: 23%;
+    flex: 1 0 25%;
 }
 
 .event-flex span  a { /*Título de cada evento*/
@@ -269,6 +279,11 @@ box-sizing: border-box;
     font-weight: 900;
     font-size: 14px;
     display: block;
+    width: 100%;
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @media (max-width:666px) {
@@ -296,6 +311,7 @@ box-sizing: border-box;
 
     .th-eventos {
         margin-top: 435px!important;
+        padding: 0!important;
     }
 
     .th-event {
