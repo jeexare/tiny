@@ -1,22 +1,14 @@
-/** TODO:
- * Modify links = Function
- *
- */
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Add post labels
   addLabels();
-
-  // Cronología
-  const currentDate = document.querySelector(".th-crono span");
-  const [monthString, year] = currentDate.textContent
-    .match(/(\w+) (\d+)/)
-    .slice(1);
-  const month =
-    new Date(Date.parse(monthString + " 1, " + year)).getMonth() + 1;
-
-  // Modify links
   loadButtons();
+
+    // Cronología
+    const currentDate = document.querySelector(".th-crono span");
+    const [monthString, year] = currentDate.textContent
+      .match(/(\w+) (\d+)/)
+      .slice(1);
+    const month =
+      new Date(Date.parse(monthString + " 1, " + year)).getMonth() + 1;
 
   // Modify post rows
   var postRows = document.querySelectorAll(".post");
@@ -30,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "--menders",
     "--inactivos",
   ];
-
   colorProperties.forEach(function (property) {
     var colorValue = getComputedStyle(document.documentElement)
       .getPropertyValue(property)
