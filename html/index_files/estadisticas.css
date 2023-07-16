@@ -1,0 +1,237 @@
+/*
+
+1024
+1280×720
+1366×768
+1440×900
+1536×864
+1600×900
+1920×1080
+
+
+@media (min-width: 1600px) {
+header a {
+    font-size: 60px!important;
+}
+
+*/
+
+/* Todo */
+
+/******************************
+         ESTADISTICAS
+*******************************/
+.stadisticas { /*Caja principal*/
+    background: var(--dark3);
+    width: 100%;
+    height: 225px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border:1px solid var(--dark2);
+    padding:20px;
+    display:flex;
+    gap:20px;
+}
+
+.s-online {
+    width:34%;
+    background:var(--dark4);
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pad-online {
+    height:100%;
+    box-sizing: border-box;
+    padding:10px;
+    overflow-y:scroll;
+    text-align: justify;
+}
+
+.pad-online a {
+    font-size:15px;
+    text-transform: lowercase;
+    font-family: var(--title);
+}
+
+.data-online {
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-transform: uppercase;
+    font-size: 10px;
+    justify-content: space-around;
+}
+
+.data-online span strong {
+    color:var(--accent);
+}
+
+.s-grupos {
+    width:21%;
+    display:flex;
+    flex-wrap: wrap;
+    gap:10px;
+    JUSTIFY-CONTENT: SPACE-BETWEEN;
+}
+
+.ggrupo {
+    background: var(--dark4);
+    flex: 0 0 calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    max-width: 29.7%;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.ggrupo strong {
+    font-size: 20px;
+}
+
+.s-horas {
+    width:30%;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.s-horas2 {
+    background:var(--dark4);
+    height:119px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.pad-horas {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: justify;
+    line-height: 1;
+}
+
+.pad-horas a {
+    font-size:11px;
+    text-transform: uppercase;
+}
+.s-nuevoo {
+    background: var(--dark4);
+    height: 54px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 2fr 2fr;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.s-nuevoo em {
+    background: var(--accent);
+    display: flex;
+    color: var(--dark3);
+    text-transform: uppercase;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+}
+.s-nuevoo a {
+        grid-row-start: 2;
+    grid-column-start: 2;
+    text-align: right;
+    font-family: var(--title);
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.s-stats {
+    width:55px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.s-stat {
+    background: var(--dark4);
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.big-stat {
+    font-family: var(--title);
+    color: var(--accent);
+    font-size: 20px;
+}
+.s-links {
+    width: 32px;
+    background: var(--dark4);
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.s-links a:nth-child(odd) {
+    color:var(--accent);
+}
+
+@media (max-width:666px) {
+    .stadisticas {
+        height: auto!important;
+        flex-wrap: wrap!important;
+        flex-direction: column!important;
+    }
+
+    .s-online {
+        width: 100%!important;
+        height: 200px!important;
+    }
+
+    .s-grupos {
+        width: 100%!important;
+        order: 1!important;
+    }
+
+    .ggrupo {
+        max-width: none!important;
+    gap: 2px!important;
+    }
+
+    .s-horas {
+        width: 100%!important;
+    }
+
+    .s-stats {
+        width: 100%!important;
+        flex-direction: row!important;
+        height: 55px!important;
+        order: 2!important;
+    }
+    
+    .s-stat {
+        width: 100%!important;
+    }
+
+    .s-links {
+        order: -1!important;
+    width: 100%!important;
+    flex-direction: row!important;
+    padding: 10px 0px!important;
+    }
+}
