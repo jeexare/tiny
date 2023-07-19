@@ -1,0 +1,188 @@
+<!-- BEGIN switch_user_logged_in -->
+<p class="right rightside">{LAST_VISIT_DATE}</p>
+<!-- END switch_user_logged_in -->
+<p>{CURRENT_TIME}</p>
+{JAVASCRIPT}
+
+<link rel="stylesheet" href="https://dl.dropbox.com/s/yo4mpka4vlw0xvt/perfil.css">
+  
+<div class="profile-simple">
+    <div class="ps-links">
+        <a href="/sta/{PUSERNAME}">temas</a>
+        <a href="/spa/{PUSERNAME}">posts</a>
+        <a href="/st/{PUSERNAME}">abiertos</a>
+        <a href="">link</a>
+        <a href="">link</a>
+        <a href="" class="linkdemibaul">link</a>
+    </div>
+  
+    <div class="ps-header">
+        <div class="ps-info">
+            <i>I</i>
+            <strong class="prof-user">{USERNAME}</strong>
+          <u><span class="psj-id"></span> {POSTER_RANK}</u>
+            <div class="ps-asks">
+              <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+                <span><em>respuesta</em><b>pregunta</b></span>
+            </div>
+        </div>
+        <img src="https://via.placeholder.com/600x250">
+    </div>
+    <div class="ps-main">
+        {AVATAR_IMG}
+        <div class="ps-trnk">
+            <div class="ps-inv">
+                <div class="ps-tit">inventario</div>
+                <div class="pad-ps">
+                    <span><b>item:</b> Descripción cool acá.</span>
+                </div>
+            </div>
+            <div class="ps-sk">
+                <div class="ps-tit">habilidades</div>
+                <div class="pad-ps">
+                    <span><b>habilidad:</b> Descripción cool acá.</span>
+                </div>
+            </div>
+        </div>
+        <div class="ps-stats">
+            <div class="ps-stat">
+                <b>00 pv</b>
+                <div class="bar-st" max="100" act="70"></div>
+            </div>
+            <div class="ps-stat">
+                <b>00 pp</b>
+                <div class="bar-st" max="100" act="30"></div>
+            </div>
+            <div class="ps-stat">
+                <b>00 atq</b>
+                <div class="bar-st" max="100" act="20"></div>
+            </div>
+            <div class="ps-stat">
+                <b>00 def</b>
+                <div class="bar-st" max="100" act="80"></div>
+            </div>
+            <div class="ps-stat">
+                <b>00 sp atq</b>
+                <div class="bar-st" max="100" act="20"></div>
+            </div>
+            <div class="ps-stat">
+                <b>00 sp def</b>
+                <div class="bar-st" max="100" act="30"></div>
+            </div>
+            <div class="ps-stat">
+                <b>00 vel</b>
+                <div class="bar-st" max="100" act="50"></div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-dates">
+        <span><!-- BEGIN switch_show_status -->
+			{USER_ONLINE}
+			<!-- END switch_show_status --></span>
+        <span>ÚLTIMA VISITA {LAST_VISIT_TIME}</span>
+    </div>
+</div>
+      
+
+<div class="infopaperfil">
+		<!-- BEGIN profile_field -->
+  <div id="field_id{profile_field.ID}" class="simpfield">
+		
+			<div class="simplabel">{profile_field.LABEL}</div> <div class="simpcontent">{profile_field.CONTENT}</div>
+  </div>
+		<!-- END profile_field -->
+          
+          <!-- BEGIN contact_field -->
+		<div id="field_id{contact_field.ID}" class="simpfield">
+			 <div class="simplabel"><span>{contact_field.LABEL}</span></div>
+                    <div class="simpcontent">{contact_field.CONTENT}</div>
+		</div>
+		<!-- END contact_field -->
+</div>
+
+  
+<script src="{JQUERY_ROOT}json/jquery.json-1.3.min.js" type="text/javascript"></script>
+  
+ <script src="https://dl.dropbox.com/s/929vmhun38hlo6h/perfil.js"></script>
+  
+<script type="text/javascript">
+//<![CDATA[
+	$(document).ready(function(){
+		$('[id^=field_id]').each(function(){
+			if ( $(this).find('.field_editable').is('span, div') )
+			{
+				$(this).hover(function()
+				{
+					if( $(this).find('.field_editable.invisible').is('span, div') )
+					{
+						$(this).find('.field_editable').prev().addClass('ajax-profil_hover').parent().addClass('ajax-profil_parent').append('<div class="ajax-profil_edit"><img src="{AJAX_EDIT_IMG}" /></div>');
+						$(this).find('.ajax-profil_edit').attr({
+								alt: "{L_FIELD_EDIT_VALUE}",
+								title: "{L_FIELD_EDIT_VALUE}"
+							}).click(function(){
+							$(this).prev().prev().removeClass('ajax-profil_hover').addClass('invisible').next().removeClass('invisible').append('<img src="{AJAX_VALID_IMG}" class="ajax-profil_valid" />').find('input,select');
+							$(this).prev().find('.ajax-profil_valid').attr({
+								alt: "{L_VALIDATE}",
+								title: "{L_VALIDATE}"
+							}).click(function(){
+								var content = new Array();
+								$(this).parent().find('[name]').each(function(){
+									var type_special = $(this).is('input[type=radio],input[type=checkbox]');
+									if ( (type_special && $(this).is(':checked')) || !type_special )
+									{
+										content.push(new Array($(this).attr('name'), $(this).attr('value')));
+									}
+								});
+								var id_name = $(this).parents('[id^=field_id]').attr('id');
+								var id = id_name.substring(8, id_name.length);
+								$.post(
+									"{U_AJAX_PROFILE}",
+									{id:id,user:"{CUR_USER_ID}",active:"{CUR_USER_ACTIVE}",content:$.toJSON(content),tid:"{TID}"},
+									function(data){
+										$.each(data, function (i, item) {
+											if (item.startsWith('error : ')){
+												let present_err=document.getElementById('field_id' + i + "_err");
+												if(!present_err){
+													let err = document.createElement('div');
+													err.id = 'field_id' + i + "_err";
+													err.classList.add("form-error");
+													err.textContent = item.substring(8);
+													document.getElementById('field_id' + i).querySelector('.field_editable input').after(err);
+												}else{
+													present_err.innerText=item.substring(8);
+												}
+											}else {
+												let err=document.getElementById('field_id' + i + "_err");
+												if(err){
+													err.remove();
+												}
+												$('[id=field_id' + i + ']').find('.field_uneditable').html(item).end().find('.ajax-profil_valid').remove().end().find('.field_editable').addClass('invisible').end().find('.field_uneditable').removeClass('invisible');
+											}
+										});
+									},
+									"json"
+								);
+							});
+							$(this).remove();
+						});
+					}
+				},function()
+				{
+					if( $(this).find('.field_editable.invisible').is('span, div') )
+					{
+						$(this).find('.field_editable').prev().removeClass('ajax-profil_hover');
+						$(this).find('.ajax-profil_edit').remove();
+					}
+				});
+			}
+		});
+	});
+//]]>
+</script>
