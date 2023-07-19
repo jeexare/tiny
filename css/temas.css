@@ -301,6 +301,10 @@ span.pp-nivel b {
   padding: 0px 25px;
 }
 
+
+/*******************
+	MEDIA
+********************/
 @media (max-width:666px) {
   .post-profile {
     display: none!important;

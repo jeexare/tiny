@@ -85,9 +85,9 @@
   .ps-asks span b {
     color: var(--groups);
     font-weight: normal;
-    font-family: var(--serif);
+    font-family: var(--sub);
     margin-top: -3px;
-    font-size: 10px;
+    font-size: 9px;
   }
   
   .ps-main {

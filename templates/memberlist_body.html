@@ -1,0 +1,100 @@
+<!-- BEGIN switch_user_logged_in -->
+<p class="right rightside">{LAST_VISIT_DATE}</p>
+<!-- END switch_user_logged_in -->
+
+<link rel="stylesheet" href="https://dl.dropbox.com/s/io4xtiu59edrlqi/memberlist.css">
+  
+<p>{CURRENT_TIME}</p>
+<h1 class="page-title solo">{PAGE_TITLE}</h1>
+
+<div class="member-list">
+  <form action="{S_MODE_ACTION}" method="get" class="ml-filters">
+        <div class="ml-header">miembros
+       <div class="pagination" style="float:none;">
+	<!-- BEGIN switch_pagination -->
+	{PAGINATION}
+	<!-- END switch_pagination -->
+</div></div>
+    <input type="text" class="inputbox ml-search" name="username" maxlength="25" size="20" value="{L_USER_SELECT_VALUE}" placeholder="Buscar por usuario"/>
+    <div class="ml-ops"><div class="ml-tit">ordenar por </div>
+    {S_MODE_SELECT}
+        <div class="ml-tit">orden</div>
+    {S_ORDER_SELECT}
+      
+      <div class="ml-ok"><input class="button2" type="submit" name="submit" value="{L_SUBMIT}" /></div>
+    </div>
+        <div class="ml-tit">grupos</div>
+        <div class="sort-pad">
+            <span class="active" data-filter="" data-group="grupos">todos</span>
+            <span data-filter="staff" data-group="grupos">staff</span>
+            <span data-filter="vortex" data-group="grupos">vortex</span>
+            <span data-filter="watchmen" data-group="grupos">watchmen</span>
+            <span data-filter="pacers" data-group="grupos">pacers</span>
+            <span data-filter="menders" data-group="grupos">menders</span>
+            <span data-filter="inactivos" data-group="grupos">inactivos</span>
+        </div>
+        <div class="ml-tit">niveles</div>
+        <div class="sort-pad">
+            <span class="active" data-filter="" data-group="niveles">todos</span>
+            <span data-filter="nivel1" data-group="niveles">i</span>
+            <span data-filter="nivel2" data-group="niveles">ii</span>
+            <span data-filter="nivel3" data-group="niveles">iii</span>
+            <span data-filter="nivel4" data-group="niveles">iv</span>
+            <span data-filter="nivel5" data-group="niveles">v</span>
+        </div>  
+</form>
+    <div class="ml-users">
+        <div class="ml-pad">
+          <!-- BEGIN memberrow -->
+	<div class="ml-user  {memberrow.ROW_CLASS}">
+          {memberrow.AVATAR_IMG}
+          <div class="ml-info">
+                <strong>{memberrow.USERNAME}</strong>
+                <div class="ml-info2">
+                    <span><b>desde</b><em>{memberrow.JOINED}</em></span>
+                    <span><b>última visita</b><em>{memberrow.LASTVISIT}</em></span>
+                    <span><b>posts</b><em>{memberrow.POSTS}</em></span>
+                   <!-- BEGIN switch_td_point -->
+                    <span><b>puntos</b><em>{memberrow.POINTS}</em></span>
+                  <!-- END switch_td_point -->
+                </div>
+                <div class="ml-links">
+                    <a href="{memberrow.U_VIEWPROFILE}"><i class="fas fa-user"></i></a>
+                    <!-- BEGIN switch_td_pm -->
+		{memberrow.PM_IMG}
+		<!-- END switch_td_pm -->
+                  {memberrow.WWW_IMG}
+            </div>
+            </div>
+		</div>
+	<!-- END memberrow -->
+
+          
+    </div>
+</div>
+</div>
+          
+
+
+<div class="forumbg forumbg-table">
+	<div class="inner"><span class="corners-top"><span></span></span>
+
+	<table class="table1" cellspacing="1" id="memberlist">
+
+	<tbody>
+
+	<!-- BEGIN switch_no_user -->
+	<tr class="row1">
+		<td colspan="{switch_no_user.COLSPAN_NUMBER}">{switch_no_user.L_NO_USER}</td>
+	</tr>
+	<!-- END switch_no_user -->
+	</tbody>
+	</table>
+
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+
+
+
+
+ <script src="https://dl.dropbox.com/s/aild1jxfd9annm4/memberlist.js"></script>

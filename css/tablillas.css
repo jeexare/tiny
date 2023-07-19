@@ -1,4 +1,6 @@
-/**************** TABLILLAS ********************/
+/*******************
+ 	TITULOS
+********************/
 h1.fad-main {
 	text-transform: uppercase;
 	font-family: var(--title);
@@ -131,6 +133,10 @@ h6.fad-main:after {
 	z-index: 4;
 }
 
+/*******************
+	PARRAFOS
+********************/
+
 p1 {
      background:var(--dark2);
      display:block;
@@ -164,6 +170,10 @@ p1 {
      font-family:var(--serif);
      font-weight:600;
 }
+
+/*******************
+	CORTA RESPUESTA ADMIN
+********************/
  .admin-w {
      background:var(--dark4);
      display:block;
@@ -174,17 +184,12 @@ p1 {
      display:flex;
      align-items:center;
      font-size:10px;
+	 min-width: 200px;
+	 gap:20px;
 }
- .admin-w i {
+ .admin-w i, .admin-w em {
      color:var(--accent);
      font-size:40px;
-     margin-right:20px;
-}
-
-.admin-w em {
-	color:var(--accent);
-	font-size:40px;
-	margin-right:20px;
 }
 
  .admin-w h7 {
@@ -194,9 +199,9 @@ p1 {
      font-family:var(--body);
 }
 
-.modo-pnj {
-    display:none;
-  }
+/*******************
+	TIMELINE
+********************/
 
   .timeline-date {
 	padding:0px 0px 20px 40px;
@@ -264,6 +269,10 @@ p1 {
 	transition:.3s ease-in-out;
   }
 
+/*******************
+	IMAGENES
+********************/
+
   .gb-img {
 	display:flex;
 	align-items:center;
@@ -300,25 +309,180 @@ p1 {
 	transition:.3s ease-in-out;
   }
 
-  .gb-tabs table {
+  /*******************
+		TABLAS
+********************/
+
+  .gb-tabs table, .postbody table {
 	width:100%;
 	 border-spacing: 15px;
   }
   
-  .gb-tabs th {
+  .gb-tabs th, .postbody th{
 	padding:0px 20px;
 	text-align:center;
 	text-transform:uppercase;
 	color:var(--accent);
   }
-  .gb-tabs td {
+  .gb-tabs td, .postbody th {
 	background:var(--dark5);
 	box-sizing:border-box;
 	padding:20px;
 	transition:.1s ease-in-out;
   }
   
-  .gb-tabs tr:hover td{
+  .gb-tabs tr:hover td, .postbody tr:hover td {
 	background:var(--dark3);
 	transition:.1s ease-in-out;
+  }
+
+  /*************************
+				HABILIDADES
+*************************/
+.skilltree {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+}
+
+.skilltree-skills {
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.skilltree-layer {
+	display: flex;
+	gap: 10px;
+}
+
+.skilltree .skill {
+	background: var(--dark2);
+	min-width: 45px;
+	min-height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.skilltree .skill em {
+	color: var(--light);
+}
+
+.skilltree .skill.sel em,
+.skilltree .skill.sel i {
+	color: var(--dark2);
+}
+
+.skill.minor {
+	display: none;
+}
+
+.skill.minor.active {
+	display: flex !important;
+}
+
+.skill.pass,
+.skill.active {
+	background: var(--groups);
+}
+
+.skilltree-tabs {
+	width: 65%;
+	height: 200px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.skilltree-tab {
+	background: var(--dark2);
+	height: 100%;
+	display: none;
+	box-sizing: border-box;
+	padding: 20px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 400px;
+}
+
+.skilltree-tab.sel {
+	display: flex;
+}
+
+.skilltree-tab strong {
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 18px;
+	color: var(--light) !important;
+}
+
+.skilltree-tab em {
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-size: 9px;
+	font-style: normal;
+	margin-top: -10px;
+	text-align: center;
+}
+
+.skilltree-tab .sk-desc {
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+	padding: 10px;
+	box-sizing: border-box;
+} 
+
+/*******************
+	MEDIA
+********************/
+@media (max-width:666px) {
+	.gb-tabs tr, .postbody tr {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 5px;
+	}
+
+	.gb-tabs tbody, .postbody tbody {
+		display: flex;
+    flex-direction: column;
+    gap: 5px;
+	}
+
+	.gb-img {
+		flex-direction: column;
+	}
+
+	.gb-img-b {
+		width: -webkit-fill-available!important;
+		order:2;
+	}
+
+	.gb-img-b img {
+		width: -webkit-fill-available;
+		object-fit: cover;
+	}
+
+	.skilltree  {
+		flex-direction: column!important;
+	}
+
+	.skilltree-tabs {
+		width: 100%!important;
+	}
+
+	.skilltree-skills {
+		width: 100%!important;
+		align-items: center!important;
+	}
   }

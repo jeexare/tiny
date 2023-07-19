@@ -82,6 +82,10 @@
   align-items: center;
 }
 
+/*******************
+	MEDIA
+********************/
+
 @media (max-width: 666px) {
   .to-info {
     display: none !important;

@@ -89,6 +89,10 @@
   align-items: center;
 }
 
+
+/*******************
+	MEDIA
+********************/
 @media (max-width:666px) {
     .ml-user {
         width:100%!important;

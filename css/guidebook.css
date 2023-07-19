@@ -143,6 +143,10 @@
     text-transform: uppercase;
   }
 
+  /*******************
+	MEDIA
+********************/
+
   @media (max-width:666px) {
     .guide-book {
         flex-direction: column!important;

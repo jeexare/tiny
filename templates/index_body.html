@@ -1,0 +1,115 @@
+{JAVASCRIPT}
+
+{CAT_NAME}
+
+<!-- BEGIN switch_user_login_form_header -->
+<div class="panel">
+	<div class="inner">
+		<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+			<div class="user_login_form center">
+				<label>{L_USERNAME} : <input class="post" type="text" size="10" name="username" /></label>&nbsp;
+				<label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
+				<label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
+				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
+
+                <!-- BEGIN switch_social_login -->
+                <div class="social_btn">
+                    <!-- BEGIN fb_connect -->
+                    <div class="fb-login-button"></div>
+                    <!-- END fb_connect -->
+                    <!-- BEGIN topicit_connect -->
+                    <div class="ti-connect"></div>
+                    <!-- END topicit_connect -->
+                </div>
+                <!-- END switch_social_login -->
+			</div>
+		</form>
+	</div>
+</div>
+<!-- END switch_user_login_form_header -->
+
+<!-- BEGIN message_admin_index -->
+	<div class="panel introduction">
+		<div class="inner"><span class="corners-top"><span></span></span>
+	<!-- BEGIN message_admin_titre -->
+		<div class="h3">{message_admin_index.message_admin_titre.MES_TITRE}</div>
+	<!-- END message_admin_titre -->
+
+	<!-- BEGIN message_admin_txt -->
+		<div class="mes-txt">{message_admin_index.message_admin_txt.MES_TXT}</div>
+	<!-- END message_admin_txt -->
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+<!-- END message_admin_index -->
+
+{CHATBOX_TOP}
+<div id="lista-categorias">
+{BOARD_INDEX}
+</div>
+
+{CHATBOX_BOTTOM}
+
+<!-- BEGIN switch_user_login_form_footer -->
+<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+<div class="footerlogin">
+		
+			
+  <div class="log-option"><em>{L_USERNAME}</em> <input class="post" type="text" size="10" name="username" /></div>
+  <div class="log-option"><em>{L_PASSWORD}</em> <input class="post" type="password" size="10" name="password" /></div>
+  <div class="log-option"><em>{L_AUTO_LOGIN}</em> <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></div>
+				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
+
+               
+	
+  </div>
+</form>
+<!-- END switch_user_login_form_footer -->
+
+<style type="text/css">
+  .footerlogin { 
+      background: var(--dark3);
+    display: flex;
+    padding: 20px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+  gap:20px;
+}
+
+.log-option {
+  display: flex;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 900;
+  flex:1;
+  gap: 10px;
+  align-items:center
+}
+
+.log-option em {
+  width: fit-content;
+    white-space: nowrap;
+    font-style: normal;
+}
+
+.log-option .post {
+  margin-top: 0!important;
+  border:1px solid var(--dark2)!important;
+    padding: 5px!important;
+      align-items: center;
+  background: var(--dark4);
+    width: 100%;
+}
+  
+  @media (max-width: 666px) { 
+   .footerlogin { 
+  flex-direction:column!important;
+  height:auto;
+  }
+  
+.log-option {
+  width:100%!important;
+  }
+  }
+</style>
+{AUTO_DST}
