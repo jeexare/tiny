@@ -1,0 +1,117 @@
+<!-- BEGIN switch_user_logged_in --><p class="right rightside">{LAST_VISIT_DATE}</p><!-- END switch_user_logged_in -->
+<p>{CURRENT_TIME}</p>
+
+<link rel="stylesheet" href="https://dl.dropbox.com/s/r2htg4lt7sm364o/grupos.css">
+  
+<div class="groups-page">
+<div class="groups-desc">
+    <div class="grousp-icon"></div>
+    <div class="groups-desc2">
+        <div class="groups-title">{GROUP_NAME}</div>
+        <div class="groups-desc3">{GROUP_DESC} 		
+		<!-- BEGIN switch_count_users_group -->
+  {switch_count_users_group.GROUP_COUNT} miembros.
+		<!-- END switch_count_users_group --></div>
+    </div>
+</div>
+<div class="groups-list">
+  <!-- BEGIN member_row -->
+	
+				<div><a href="{member_row.U_VIEWPROFILE}">{member_row.USERNAME}</a>
+                          <!-- BEGIN switch_mod_option --><span class="posts"><input type="checkbox" name="members[]" value="{member_row.USER_ID}" /></span><!-- END switch_mod_option --></div>
+				
+
+			<!-- END member_row -->
+			<!-- BEGIN switch_no_members --><div class="center">{L_NO_MEMBERS}</div>
+			<!-- END switch_no_members -->
+			<!-- BEGIN switch_hidden_group -->
+<div class="center">{L_HIDDEN_MEMBERS}</div>
+			<!-- END switch_hidden_group -->
+</div>
+
+<div class="panel">
+	<form action="{S_GROUPCP_ACTION}" method="post">
+	<fieldset>
+          <!-- BEGIN switch_mod_option -->
+			<label><input type="radio" name="group_type" value="{S_GROUP_OPEN_TYPE}" {S_GROUP_OPEN_CHECKED} {S_GROUP_OPEN_DISABLED} />{L_GROUP_OPEN}</label>
+				<label><input type="radio" name="group_type" value="{S_GROUP_CLOSED_TYPE}" {S_GROUP_CLOSED_CHECKED} />&nbsp;{L_GROUP_CLOSED}</label>
+				<label><input type="radio" name="group_type" value="{S_GROUP_HIDDEN_TYPE}" {S_GROUP_HIDDEN_CHECKED} />&nbsp;{L_GROUP_HIDDEN}</label>
+				<label><input class="button2" type="submit" name="groupstatus" value="{L_UPDATE}" /></label>
+			
+		<!-- END switch_mod_option -->
+		{S_HIDDEN_FIELDS}
+	</fieldset>
+	</form>
+	
+  <form action="{S_GROUPCP_ACTION}" method="post" name="post">
+
+		<!-- BEGIN switch_mod_option -->
+		<!-- BEGIN switch_grp_admin -->
+			<p class="row1" style="padding: 5px 0px;"><strong>{L_ADMIN_GRP_EXPLAIN}</strong></p>
+		<!-- END switch_grp_admin -->
+		<p class="left-box"><input class="inputbox tiny" type="text" id="username" name="username" />&nbsp;
+							&nbsp;<input class="button2" type="submit" name="add" value="{L_ADD_MEMBER}" />&nbsp;
+							&nbsp;<input class="button2" type="button" id="find_user" value="{L_FIND_USERNAME}" />
+		</p>
+		<p class="right-box"><input class="button2" type="submit" name="remove" value="{L_REMOVE_SELECTED}" />{S_HIDDEN_FIELDS}</p>
+		<!-- END switch_mod_option -->
+
+<p class="pagination">{PAGINATION}</p>
+<div class="clear"></div>
+{PENDING_USER_BOX}
+</form>
+</div>
+</div>
+
+
+
+<!-- BEGIN switch_mod_option -->
+<div id="find_username" class="jqmWindow"></div>
+
+<script src="{JQUERY_DIR}jqmodal/jqmodal.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+	$(document).ready(function(){
+		function find_username(fieldname) {
+			$.get('{U_SEARCH_USER}&fieldname=' + fieldname + '&time=' + timestamp(), '',
+				function(data){
+					$('#find_username').html(data).jqmShow();
+					$('.jqmOverlay').bgiframe();
+					$('#find_username').bgiframe();
+				});
+			return false;
+		}
+		$('#find_user').click(function(){
+			return find_username('username');
+		});
+		$('#find_username').jqm({toTop: true});
+	});
+//]]>
+</script>
+<!-- END switch_mod_option -->
+  
+  <script type="text/javascript">
+//<![CDATA[
+	document.addEventListener('DOMContentLoaded', function() {    
+  var groupsTitleElement = document.querySelector('.groups-title');
+  var groupsTitleText = groupsTitleElement.textContent.toLowerCase();
+  var groupsPageElement = document.querySelector('.groups-page');
+  groupsPageElement.classList.add(groupsTitleText);
+  var grouspIconElement = document.querySelector('.grousp-icon');
+
+  if (groupsTitleText === 'staff') {
+    grouspIconElement.innerHTML = '<i class="cp cp-beehive"></i>';
+  } else if (groupsTitleText === 'vortex') {
+    grouspIconElement.innerHTML = '<em class="far fa-bullseye"></em>';
+  } else if (groupsTitleText === 'watchmen') {
+    grouspIconElement.innerHTML = '<i class="cp cp-helm-o"></i>';
+  } else if (groupsTitleText === 'pacers') {
+    grouspIconElement.innerHTML = '<i class="cp cp-galactic-republic"></i>';
+  } else if (groupsTitleText === 'menders') {
+    grouspIconElement.innerHTML = '<i class="far fa-atom"></i>';
+  } else if (groupsTitleText === 'inactivos') {
+    grouspIconElement.innerHTML = '<i class="fas fa-tombstone-alt"></i>';
+  }
+  });
+//]]>
+</script>
