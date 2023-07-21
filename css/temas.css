@@ -39,6 +39,8 @@ header a {
 .thh-left > a  { 
   font-weight: 900;
   color: var(--accent);
+  font-family: var(--sub);
+  text-transform: uppercase;
 }
 
 .thh-right {

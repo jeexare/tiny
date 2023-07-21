@@ -108,6 +108,7 @@
     min-height: 420px;
     flex: 1;
     margin-left: -1px;
+    width: 80%;
   }
   
   .gb-tab {
@@ -159,6 +160,10 @@
 
     .gb-tab {
       padding: 10px!important;
+    }
+
+    .gb-tabs {
+      width:100%!important;
     }
 
   }
