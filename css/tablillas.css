@@ -557,6 +557,14 @@ p3 {
   gap: 10px;
 }
 
+.combat br {
+	display: none;
+}
+
+.combat-actions br, .combat-pad br {
+	display: block;
+}
+
 .combat icon {
   display: block;
   background: var(--dark2);
