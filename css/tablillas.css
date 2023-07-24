@@ -913,30 +913,9 @@ p3 {
   box-sizing: border-box;
 }
 
-.dossier-peculiaridades {
-  background: var(--dark3);
-  width: 100%;
-  height: 60px;
-  display: flex;
-  border-bottom: 1px solid var(--dark2);
-  box-sizing: border-box;
-  padding: 10px;
-  gap: 10px;
-}
-
-.dossier-peculiaridades span {
-  background: var(--dark4);
-  box-sizing: border-box;
-  padding: 10px;
-  width: 50%;
-  text-align: center;
-  font-family: var(--mono);
-  color: var(--groups);
-}
-
 .dossier-narr {
   width: 100%;
-  height: 155px;
+  height: 213px;
   display: flex;
 }
 
