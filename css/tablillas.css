@@ -999,6 +999,11 @@ p3 {
 	MEDIA
 ********************/
 @media (max-width: 666px) {
+  h1.fad-main {
+    line-height: 1;
+    font-size: 30px;
+  }
+
   .gb-tabs tr,
   .postbody tr {
     display: flex;
