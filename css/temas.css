@@ -102,6 +102,8 @@ header a {
 .ppextra-left {
   display: flex;
   gap: 10px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .ppextra-left a {
@@ -240,8 +242,6 @@ top: 121px;
 .pp-extra {
   display: flex;
   gap: 10px;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .pp-extra span {
