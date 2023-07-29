@@ -173,18 +173,39 @@ header a {
 top: 121px;
 }
 
-.post-profile img {
+.mini-profile img {
   width: 250px;
   height: 350px;
   object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
+.mini-profile:hover img {
+  opacity: 1;
+  filter:grayscale(100%) brightness(50%);
+}
+
+.pp-filter {
+  background: linear-gradient(to top, var(--groups), transparent);
+  width: 250px;
+  height: 350px;
+  top: 0;
+  position: absolute;
+  mix-blend-mode: color-dodge;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  backdrop-filter: blur(3px);
+}
+
+.mini-profile:hover .pp-filter {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
 }
 
 .pp-hover {
   width: 250px;
   height: 350px;
-  background: rgb(0, 0, 0, 0.9);
   position: absolute;
-  backdrop-filter: blur(3px);
   top: 0;
   box-sizing: border-box;
   padding: 45px;
@@ -193,6 +214,8 @@ top: 121px;
   flex-direction: column;
   opacity: 0;
   transition: 0.5s ease-in-out;
+  justify-content: center;
+  text-shadow: 2px 2px 4px var(--dark4);
 }
 
 .mini-profile:hover .pp-hover {
@@ -242,6 +265,7 @@ top: 121px;
 .pp-extra {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .pp-extra span {
