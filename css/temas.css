@@ -74,7 +74,7 @@ header a {
   height: 130px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--dark3);
+  border-bottom: 1px solid var(--dark2);
   box-sizing: border-box;
 }
 
@@ -84,7 +84,7 @@ header a {
   justify-content: space-between;
   align-items: center;
   padding: 0px 50px;
-  border-bottom: 1px solid var(--dark3);
+  border-bottom: 1px solid var(--dark2);
     box-sizing: border-box;
     background: var(--pattern), var(--dark3);
     background-blend-mode: color-dodge;
