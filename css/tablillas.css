@@ -1,7 +1,7 @@
 /**** MISC ****/
 
 icon.hex {
-  background: var(--groups);
+  background: var(--accent);
   width: 44px;
   height: 38px;
   display: flex;
@@ -24,7 +24,7 @@ icon.hex i {
   align-items: center;
   margin: 0 auto;
   font-size: 18px;
-  color: var(--groups);
+  color: var(--accent);
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   border-radius: 11px;
 }
@@ -176,7 +176,7 @@ p1 {
   margin: 0 auto;
 }
 p2 {
-  background: var(--accentt);
+  background: var(--accent);
   display: block;
   width: 65%;
   max-width: calc(100% - 40px);
