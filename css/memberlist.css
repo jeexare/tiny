@@ -5,7 +5,7 @@
 
 .member-list {
     width: 100%;
-    background: var(--dark3);
+    background: rgb(var(--darkrgb),.4);
     margin-top: 40px;
     box-sizing: border-box;
     display: flex;
@@ -15,7 +15,7 @@
 }
 
 .ml-filters {
-    border: 1px solid var(--dark2);
+    border: 1px solid var(--dark3);
     box-sizing: border-box;
     padding: 20px;
     width: calc(100% - 40px);
@@ -33,7 +33,7 @@
     text-transform: uppercase;
     font-weight: 900;
     width: fit-content;
-    background: var(--dark);
+    background: rgb(var(--darkrgb),.4);
     font-size: 11px;
     padding: 5px 10px;
     color: var(--accent);
@@ -65,7 +65,7 @@
   position: relative;
   width: 100%;
   left: auto;
-  border-top: 1px solid var(--dark2);
+  border-top: 1px solid var(--dark3);
 }
 
 .ml-pad {
@@ -82,7 +82,7 @@
   display: flex;
   width: 49%;
   height: 210px;
-  background: var(--dark);
+  background: rgb(var(--darkrgb),.4);
   box-sizing: border-box;
   padding: 20px 0px;
   justify-content: space-around;
@@ -108,8 +108,8 @@
   height: 70px;
   object-fit: cover;
   border-radius: 100%;
-  border: 10px solid var(--dark);
-  outline: 10px solid var(--dark4);
+  outline: 1px solid var(--groups);
+  outline-offset:10px;
 }
 .ml-info {
   height: 100%;
