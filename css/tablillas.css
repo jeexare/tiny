@@ -180,7 +180,8 @@ p2 {
   background: var(--groups);
   display: block;
   width: 65%;
-  min-width: 255px;
+  max-width: calc(100% - 40px);
+  min-width: 220px;
   box-sizing: border-box;
   padding: 40px;
   margin: 0 auto;
@@ -217,6 +218,7 @@ p3 {
   font-size: 10px;
   min-width: 200px;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .admin-w i,
 .admin-w em {
@@ -232,7 +234,7 @@ p3 {
 }
 
 .admin-w p {
-  width: calc(100% - 60px);
+  flex:1;
 }
 
 /*******************

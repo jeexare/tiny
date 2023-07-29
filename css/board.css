@@ -319,7 +319,7 @@ box-sizing: border-box;
 
     .event-flex span {
     align-items: center!important;
-    max-width: 46%!important;
+    max-width: 45%!important;
     flex: 1 0 40%!important;
     height: 50px!important;
     }
