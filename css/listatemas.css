@@ -23,7 +23,7 @@
   padding: 10px 0px;
 }
 .thread {
-  background: var(--dark3);
+  background: rgb(var(--darkrgb),.4);
   height: 75px;
   box-sizing: border-box;
   padding: 20px;
