@@ -30,8 +30,7 @@ function loadLast() {
       else if (adminSpand) adminLink = adminSpand.outerHTML;
 
       var lastPostAnchor = parentDiv.querySelector("a.last-post-icon");
-      if (!lastPostAnchor)
-        lastPostAnchor = parentDiv.querySelector('a[href*="?view=newest"]');
+      if (!lastPostAnchor) lastPostAnchor = parentDiv.querySelector('a[href*="?view=newest"]');
       // Update the innerHTML of lastPostAnchor
       lastPostAnchor.innerHTML = '<i class="fas fa-chevron-right"></i>';
 
