@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
       divElement.setAttribute("max", 50);
     }
 
-    // ATQ
+    // PDR
     if (i === 2) {
       var pdrField = document.querySelector(
         ".pdr .simpcontent .field_uneditable"
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
       divElement.setAttribute("max", 50);
     }
 
-    // DEF
+    // GUA
     if (i === 3) {
       var guaField = document.querySelector(
         ".gua .simpcontent .field_uneditable"
