@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // PS
     if (i === 0) {
-      var pvField = document.querySelector(
+      var psField = document.querySelector(
         ".ps .simpcontent .field_uneditable"
       );
       var psContent = psField.innerHTML;
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       var pdrContent = pdrField.innerHTML;
       bElement.textContent = pdrContent + " pdr";
-      divElement.setAttribute("pdr", pdrContent);
+      divElement.setAttribute("act", pdrContent);
       divElement.setAttribute("max", 50);
     }
 
@@ -110,11 +110,11 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       var guaContent = guaField.innerHTML;
       bElement.textContent = guaContent + " gua";
-      divElement.setAttribute("act", defContent);
+      divElement.setAttribute("act", guaContent);
       divElement.setAttribute("max", 50);
     }
     // VEL
-    if (i === 6) {
+    if (i === 4) {
       var velField = document.querySelector(
         ".vel .simpcontent .field_uneditable"
       );
