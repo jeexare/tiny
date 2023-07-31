@@ -249,6 +249,15 @@ tiradaSpans.forEach(function (span) {
       linkBaul.setAttribute("title", "Baúl");
       linkBaul.innerHTML = '<i class="fas fa-suitcase"></i>';
     }
+          
+              var imgDossier = postRow.querySelector(
+      'img[src*="https://via.placeholder.com/10/000000.png"]'
+    );
+    if (imgDossier) {
+      var linkDossier = imgDossier.parentNode;
+      linkDossier.setAttribute("title", "Dossier");
+      linkDossier.innerHTML = '<i class="fas fa-atlas"></i>';
+    }
 
     var iconoField = postRow.querySelector(".ícono .postcontent img");
     var iconoContainer = postRow.querySelector(".ph-right img");
@@ -269,8 +278,18 @@ tiradaSpans.forEach(function (span) {
       msjContainer.remove();
     }
 
-    var puntosField = postRow.querySelector(".puntos .postcontent");
-    var puntosContainer = postRow.querySelector(".pp-pts");
+    var aeonsField = postRow.querySelector(".aeons .postcontent");
+    var aeonsContainer = postRow.querySelector(".pp-pts");
+    if (aeonsField) {
+      var aeonsContent = aeonsField.innerHTML;
+      var aeonsNew = aeonsContainer.querySelector("b");
+      aeonsNew.innerHTML = aeonsContent;
+    } else {
+      aeonsContainer.remove();
+    }
+
+              var puntosField = postRow.querySelector(".puntos .postcontent");
+    var puntosContainer = postRow.querySelector(".pp-exp");
     if (puntosField) {
       var puntosContent = puntosField.innerHTML;
       var puntosNew = puntosContainer.querySelector("b");
@@ -278,7 +297,7 @@ tiradaSpans.forEach(function (span) {
     } else {
       puntosContainer.remove();
     }
-
+          
     var nivelField = postRow.querySelector(".nivel .postcontent");
     var nivelContainer = postRow.querySelector(".pp-nivel");
     if (nivelField) {
@@ -287,16 +306,6 @@ tiradaSpans.forEach(function (span) {
       nivelNew.innerHTML = nivelContent;
     } else {
       nivelContainer.remove();
-    }
-
-    var expField = postRow.querySelector(".experiencia .postcontent");
-    var expContainer = postRow.querySelector(".pp-exp");
-    if (expField) {
-      var expContent = expField.innerHTML;
-      var expNew = expContainer.querySelector("b");
-      expNew.innerHTML = expContent;
-    } else {
-      expContainer.remove();
     }
 
     var fechaField = postRow.querySelector(".fecha .postcontent");

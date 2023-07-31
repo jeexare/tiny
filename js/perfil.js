@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
       emElement.innerHTML = msjContent;
       bElement.innerHTML = "Mensajes";
     }
-    // PUNTOS
+    // Aeons
     if (i === 1) {
       var aeonsField = document.querySelector(
         ".aeons .simpcontent .field_uneditable"
@@ -162,10 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
       emElement.innerHTML = aeonsContent;
       bElement.innerHTML = "Aeons";
     }
-    // EXP
+    // Puntos de Servicio
     if (i === 2) {
       var experienciaField = document.querySelector(
-        ".experiencia .simpcontent .field_uneditable"
+        ".puntos .simpcontent .field_uneditable"
       );
       if (!experienciaField || experienciaField.innerHTML === " &nbsp;-") {
         psAsk.remove();
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       var experienciaContent = experienciaField.innerHTML;
       emElement.innerHTML = experienciaContent;
-      bElement.innerHTML = "Experiencia";
+      bElement.innerHTML = "Puntos de Servicio";
     }
 
     // FECHA DE INSCRIPCIÓN
