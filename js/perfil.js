@@ -306,6 +306,20 @@ document.addEventListener("DOMContentLoaded", function () {
       psLink.setAttribute("href", baulContent);
       psLink.textContent = "Baúl";
     }
+
+    // DOSSIER
+    if (i === 6) {
+      var dossierField = document.querySelector(
+        ".dossier .simpcontent .field_uneditable a"
+      );
+      if (!dossierField) {
+        psLink.remove();
+        continue;
+      }
+      var dossierContent = dossierField.getAttribute("href");
+      psLink.setAttribute("href", dossierContent);
+      psLink.textContent = "Dossier";
+    }
   }
 
   // Eliminar resto
