@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // NIVEL
   var nivelField = document.querySelector(
-    ".nivel .simpcontent .field_uneditable"
+    ".stage .simpcontent .field_uneditable"
   );
   if (nivelField) {
     var nivelContent = nivelField.innerHTML;
     var nivelContainer = document.querySelector(".ps-info i");
-    nivelContainer.innerHTML = "nivel " + nivelContent;
+    nivelContainer.innerHTML = "stage " + nivelContent;
   }
 
   // ID

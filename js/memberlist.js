@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         var nivelContent = newDiv.querySelector(
-          ".nivel .simpcontent .field_uneditable"
+          ".stage .simpcontent .field_uneditable"
         ).textContent;
         if (nivelContent !== null) {
           for (var nivel in sortPorNivel) {
