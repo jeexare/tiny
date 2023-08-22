@@ -81,13 +81,14 @@ ul.topiclist.forums { /*Listado de subforos*/
 .foro-sub { /*Lista de link en un subforo*/
     border-top: 1px solid var(--dark3);
     box-sizing: border-box;
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
     padding: 5px;
-    font-family: var(--serif);
+    font-family: var(--mono);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
+    font-weight: 900;
 }
 
 .foro-side { /*Parte a la derecha de cada subforo reg*/
@@ -277,7 +278,7 @@ ul.topiclist.forums { /*Listado de subforos*/
 }
 
 #c2 .foro-reg.ffichas .foro-tit { /*Titulo*/
-    font-size: 50px;
+    font-size: 32px;
     font-family: var(--title);
     text-shadow: 1px 2px 0px var(--accent);
 }
@@ -285,7 +286,6 @@ ul.topiclist.forums { /*Listado de subforos*/
 #c2 .foro-reg.ffichas .foro-sub { /*Links*/
     border: none;
     padding: 0px;
-    margin-top:-12px;
 }
 #c2 .foro-reg.ffichas .foro-side {  /*Ultimo tema*/
     width: 100%;
@@ -428,6 +428,8 @@ ul.topiclist.forums { /*Listado de subforos*/
 
     .foro-sub {
         border-top: 0!important;
+        flex-wrap: wrap!important;
+        gap: 10px!important;
     }
 
     .foro-side {
