@@ -377,6 +377,18 @@ p3 {
   transition: 0.1s ease-in-out;
 }
 
+.gb-tabs b {
+  font-family: var(--sub);
+  margin: 30px;
+  color:var(--groups);
+  font-size:15px;
+}
+
+.gb-tabs strong {
+  font-family: var(--mono);
+  text-transform: uppercase;
+}
+
 /*************************
 				HABILIDADES
 *************************/
