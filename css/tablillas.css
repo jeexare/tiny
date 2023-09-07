@@ -1092,18 +1092,100 @@ padding-top: 20px;
 
 .lanzada-dados .tirada span {
   font-family: var(--body);
-font-size: 30px;
+font-size: 15px;
 font-weight: 900;
 }
 
 .lanzada-dados .tirada div {
   display: flex;
-margin: 20px 0px;
-align-items: center;
-justify-content: center;
-gap: 20px;
+  margin: 20px 0px;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  height: auto;
+  flex-wrap: wrap;
 }
 
+.lanzada-dados .tirada .resultado-d4 strong, 
+.lanzada-dados .tirada .resultado-d6 strong, 
+.lanzada-dados .tirada .resultado-d12 strong {
+  font-family: var(--title);
+  font-size: 70px;
+  color: var(--accent)!important;
+  font-weight: 900;
+  text-shadow: 1px 0px 0px var(--light);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lanzada-dados .tirada .resultado-d4 strong:before,
+.lanzada-dados .tirada .resultado-d6 strong:before,
+.lanzada-dados .tirada .resultado-d12 strong:before {
+  content: '\f890';
+  position: absolute;
+  font-family: "Font Awesome 5 Pro"!important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-weight: 600;
+  text-shadow: none;
+  font-size: 30px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.lanzada-dados .tirada .resultado-d4 strong:after,
+.lanzada-dados .tirada .resultado-d6 strong:after,
+.lanzada-dados .tirada .resultado-d12 strong:after  {
+  content: '\f890';
+  position: absolute;
+  font-family: "Font Awesome 5 Pro"!important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 30px;
+  text-shadow: none;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  rotate: 180deg;
+}
+
+.resultado-acierto-o-fallo strong {
+  font-size:0px;
+}
+
+.acierto-o-fallo-res-1:before {
+content:'acierto';
+display: block;
+    font-size: 35px;
+    color: var(--accent);
+    font-family: var(--title);
+    letter-spacing: 2px;
+}
+
+.acierto-o-fallo-res-2:before {
+  content:'fallo';
+  display: block;
+  font-size: 35px;
+  color: var(--accent);
+  font-family: var(--title);
+  letter-spacing: 2px;
+}
 /*******************
 	i2i
 ********************/
@@ -1384,13 +1466,14 @@ TIENDA ITEMS
 ******/
 
 .nex-item {
-	background:var(--dark4);
-	width:45%;
-	height:190px;
-	box-sizing:border-box;
-	padding:10px;
-	padding-top:50px;
-	position:relative;
+  background: var(--dark4);
+  height: 190px;
+  box-sizing: border-box;
+  padding: 10px;
+  padding-top: 50px;
+  position: relative;
+  flex: 45%;
+  max-width:340px;
 }
 
 .nex-item br {
@@ -1416,21 +1499,24 @@ TIENDA ITEMS
 }
 
 .nex-item nombre {
-	position:absolute;
-	left:65px;
-	width:fit-content;
-	font-size:14px;
-	text-transform:uppercase;
-	font-family:var(--body);
-	font-weight:800;
-	top:13px;
+  position: absolute;
+  left: 65px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: var(--body);
+  font-weight: 800;
+  top: 13px;
+  width: calc(100% - 74px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nex-item info {
 		position:absolute;
 	left:60px;
 	width:fit-content;
-	font-size:10px;
+	font-size:7px;
 	text-transform:uppercase;
 	font-family:var(--mono);
 	top:33px;
@@ -2095,6 +2181,15 @@ TIENDA ITEMS
   display: block;
 }
 
+.newspoiler .tt {
+  display: none;
+  padding: 10px;
+}
+
+.newspoiler.open .tt {
+  display: block;
+}
+
 .newspoiler.open .sp-header {
   border-bottom: 1px solid var(--dark);
 }
@@ -2137,6 +2232,10 @@ TIENDA ITEMS
 
 .newspoiler.faqq .sp-header:before {
   content: "\f059";
+}
+
+.newspoiler.openme .sp-header:before {
+  content: "\f324";
 }
 
 .newspoiler .sp-header span {
@@ -3503,4 +3602,44 @@ TIENDA ITEMS
 .idid:hover strong {
   opacity: 1;
   transition: 0.3s ease-in-out;
+}
+
+/***/
+
+.bingo-apr {
+  width:320px;
+  height:365px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;
+  gap:10px;
+  line-height:1.4;
+}
+
+.bingo-apr br {
+  display:none;
+}
+
+.bingo-apr card, .bingo-apr wild {
+  display:block;
+  width:100px;
+  height:115px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  box-sizing:border-box;
+  padding:10px;
+  text-transform:uppercase;
+  font-size:10px;
+  font-family:var(--mono);
+  background:var(--dark);
+}
+
+.bingo-apr wild {
+background:url('https://i.ibb.co/QQ1VZh3/TINYICON.webp');
+  background-size:cover;
+  background-position:center;
+  
 }
