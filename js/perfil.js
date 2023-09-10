@@ -15,11 +15,32 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Cronología
-  const currentDate = document.querySelector(".th-crono span");
-  const cdText = currentDate.textContent;
-  const [monthString, year] = cdText.match(/(\w+) (\d+)/).slice(1);
-  const month =
-    new Date(Date.parse(monthString + " 1, " + year)).getMonth() + 1;
+         
+          // Mapeo de nombres de meses en español a inglés
+          const mesesEnEspañol = {
+            "enero": "January",
+            "febrero": "February",
+            "marzo": "March",
+            "abril": "April",
+            "mayo": "May",
+            "junio": "June",
+            "julio": "July",
+            "agosto": "August",
+            "septiembre": "September",
+            "octubre": "October",
+            "noviembre": "November",
+            "diciembre": "December"
+          };
+          
+          const currentDate = document.querySelector(".th-crono span");
+          const [monthString, year] = currentDate.textContent
+            .match(/(\w+) (\d+)/)
+            .slice(1);
+          
+          // Traducir el nombre del mes a inglés
+          const monthInEnglish = mesesEnEspañol[monthString.toLowerCase()];
+          
+          const month = new Date(Date.parse(monthInEnglish + " 1, " + year)).getMonth() + 1;
 
   // NIVEL
   var nivelField = document.querySelector(
